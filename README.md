@@ -1,18 +1,79 @@
-# VR
- 
-## Project Setup <a href="https://unity.com/releases/2021-lts"> <img align="right" width="120" src="https://user-images.githubusercontent.com/73842931/225893646-fa93e4e8-da2a-475b-a9d7-075a312f94c8.png" /> </a>   
+# Challenge 1 - Architecture Review                                                        <a href="https://unity.com/releases/2021-lts"> <img align="right" width="120" src="https://github.com/moha-b/VR/blob/Challenge-1-Architecture-Review/Assets/Challenges/01_Architecture/Readme%20Images/Unity.png" /> </a>   
 
-1 - We will use unity version 2021 LTS
+In this task, we'll use the skills we learnt while creating our VR Room in an Architectural review app. With this prototype, the user may view a structure at a real-world scale, check a small 3D model and floor plan of that building, and even use a ruler to take measures while they look about.
+- Open the broken architecture review prototype Scene:
+    - From the Project window, expand, Assets > Challenges > 01_Architecture > Scenes
+    - Double-click on the Architecture_Prototype_Broken Scene to open it.
 
-2 - Create a new [3D(URP)](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@16.0/manual/index.html) project
+- Begin working on the challenge tasks:
+   - Work through the tasks outlined in the steps below.
+   - If you want to push your skills, attempt the optional bonus challenge tasks, as well.
+   - If you get stuck, there are hints for each task at the bottom of the page.
 
-3 - Right click on the **Scenes** folder and create a new Scene
+## challenge tasks 🔒
+1.  The measuring stick and clipboard aren’t attaching properly to the left wrist.
+      - The clipboard should be flipped around and the measuring stick should snap to the spot just to the left of the clipboard.
 
-4 - Rename the new Scene to "VR Starter Scene", and open it
+2.  The house model is snapping to the pedestal from very far away.
+      - The house model should snap to the pedestal when you place it on top of the pedestal.
 
-5 - Install XR plugin packages
-    
-  5.1. 
-   - Top menu select Edit > Project Settings
-   - Search for XR Plugin Management
-   - Click install 
+3.  You can currently snap the ruler and clipboard to the pedestal and the house model the left wrist.
+      - You should only be able to put the house model on the pedestal, while the clipboard and measuring stick should only be able to snap to the wrist.
+
+4.  The dining table is too tall. 
+      - The table should be exactly 0.74 meters (or 29 inches) high.
+
+5.  The teleportation anchor next to the pedestal puts the player upside-down and facing away from the pedestal.
+      - Teleporting here should orient the player upright and towards the pedestal.
+
+
+## Solution 🔓
+### 1. The measuring stick and clipboard aren’t attaching properly to the left wrist. <img align="right" width="400" src="https://github.com/moha-b/VR/blob/Challenge-1-Architecture-Review/Assets/Challenges/01_Architecture/Readme%20Images/Socket_Measuring_Stick_Transform.png"/>
+in your hierarchy select, XR Rig > LeftHand Controller > Socket_MeasuringStick > Attach 
+
+you will notes that in the transform the position has a value, reset it to the default
+1. right click on the `transform` component
+2. select `reset` form the menu and we are done
+**OR** 
+you can do it manualy by set the x , y, and z value to 0
+---
+
+### 2. The house model is snapping to the pedestal from very far away.
+in your hierarchy select,  Pedestal > Socket <img align="right" width="400" src="https://github.com/moha-b/VR/blob/Challenge-1-Architecture-Review/Assets/Challenges/01_Architecture/Readme%20Images/Pedestal_Socket_Sphere_Collider.png"/>
+
+Here in the `Sphere Collider` Component the **Radius** is set to 2 which takes a large space to reduce the radius amount to any value u want but not too small you will find it hard to get the model back if u were to run this Challenge on the `XR Device Simulator`
+
+---
+
+### 3. You can currently snap the ruler and clipboard to the pedestal and the house model the left wrist.
+in your hierarchy select,  Measuring Stick OR Clipboard  <img align="right" width="400" src="https://github.com/moha-b/VR/blob/Challenge-1-Architecture-Review/Assets/Challenges/01_Architecture/Readme%20Images/Clipboard_XR_Grab_Interactable.png"/>
+
+
+Search for the `Interaction Layer Mask` as you can see it's set by default to **Everything** 
+
+1. click on it (The drop-down menu) and select `Add New Layer` in the inspector you will navigate to `Interaction Layer Settings`.
+
+2. add a new layer by typing the layer name in the first empty slot, now create our layer that will be only for the Measuring Stick and Clipboard.
+
+3. go to Measuring Stick or Clipboard in the `Interaction Layer Mask`.
+
+4. select **Nothing**(the drop-down menu) after that click again and select the new layer you have created. <img align="right" src=
+"https://github.com/moha-b/VR/blob/Challenge-1-Architecture-Review/Assets/Challenges/01_Architecture/Readme%20Images/InteractionLayerSettings.png"/>
+
+5. apply these changes on both objects the Measuring Stick and Clipboard do the exact same thing in step 4.
+
+6. navigate to XR Rig > LeftHand Controller > Socket_Clipboard in `XR Socket Interactor` and apply step 4.
+
+7. navigate to XR Rig > LeftHand Controller > Socket_MeasuringStick in `XR Socket Interactor` and apply step 4.
+
+Now you can't hold anything with your left-hand controller except the objects that have the same layer with the `XR Socket Interactor` on your left-hand controller, after doing all 7 steps try and test it in your editor if you face any issues let me know by creating an [issues](https://github.com/moha-b/VR/issues) but first check the steps again.
+
+---
+
+### 4. The dining table is too tall. 
+in your hierarchy select,  Measuring Stick OR Clipboard  <img align="right" width="400" src="https://github.com/moha-b/VR/blob/Challenge-1-Architecture-Review/Assets/Challenges/01_Architecture/Readme%20Images/Table.png"/>
+
+---
+
+### 5. The teleportation anchor next to the pedestal puts the player upside-down and facing away from the pedestal.
+in your hierarchy select,  Measuring Stick OR Clipboard  <img align="right" width="400" src="https://github.com/moha-b/VR/blob/Challenge-1-Architecture-Review/Assets/Challenges/01_Architecture/Readme%20Images/TeleportationAnchor.png"/>
