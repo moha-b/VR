@@ -71,7 +71,7 @@ Now you can't hold anything with your left-hand controller except the objects th
 ---
 
 ### 4. The dining table is too tall. 
-in your hierarchy select,  Table  <img align="right" width="400" src="https://github.com/moha-b/VR/blob/Challenge-1-Architecture-Review/Assets/Challenges/01_Architecture/Readme%20Images/Table.png"/>
+in your hierarchy select,  Table  <img align="right" width="300" src="https://github.com/moha-b/VR/blob/Challenge-1-Architecture-Review/Assets/Challenges/01_Architecture/Readme%20Images/Table.png"/>
 
 you can Scale the whole object from `Transform` first Enable constraint property like the image below. Pick a good dimensions that is neither too big or too little for you.
 
