@@ -97,4 +97,4 @@ and select `Target Up And Forward`
 
 <img align="left" width="50" height="50" src="https://user-images.githubusercontent.com/73842931/226426630-55bbdb41-429f-46ad-aecd-40643fe2ac72.png"> 
 
-**IF YOU FACEC ANY ISSUE LET ME KNOW.[Create an Issue](https://github.com/moha-b/VR/issues)**    
+**IF YOU FACEC ANY ISSUE LET ME KNOW. [Create an Issue](https://github.com/moha-b/VR/issues)**    
