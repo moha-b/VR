@@ -71,9 +71,30 @@ Now you can't hold anything with your left-hand controller except the objects th
 ---
 
 ### 4. The dining table is too tall. 
-in your hierarchy select,  Measuring Stick OR Clipboard  <img align="right" width="400" src="https://github.com/moha-b/VR/blob/Challenge-1-Architecture-Review/Assets/Challenges/01_Architecture/Readme%20Images/Table.png"/>
+in your hierarchy select,  Table  <img align="right" width="400" src="https://github.com/moha-b/VR/blob/Challenge-1-Architecture-Review/Assets/Challenges/01_Architecture/Readme%20Images/Table.png"/>
+
+you can Scale the whole object from `Transform` first Enable constraint property like the image below. Pick a good dimensions that is neither too big or too little for you.
+
+ <img src="https://user-images.githubusercontent.com/73842931/226409742-06f253b2-9140-44c6-a627-57dc0f3f215b.png" />
+
+### Another approach (how i did it).
+In the `Table` object, you will find in it many child objects with names `Leg1` to `Leg4` and `Top` but no need for the **Top**. In `Leg1` go to the **Transform component** I change the y scale from whatever the value is to **1**. then do the same for other Leg objects. finally, after you do this you will find out that the `Top` object is **floating**, drag the `Top` object until it touches the Leg objects
 
 ---
 
-### 5. The teleportation anchor next to the pedestal puts the player upside-down and facing away from the pedestal.
-in your hierarchy select,  Measuring Stick OR Clipboard  <img align="right" width="400" src="https://github.com/moha-b/VR/blob/Challenge-1-Architecture-Review/Assets/Challenges/01_Architecture/Readme%20Images/TeleportationAnchor.png"/>
+### 5. The teleportation anchor next to the pedestal puts the player upside-down and facing away from the pedestal. 
+In your hierarchy select, Teleportation Anchor  <img align="right" width="400" src="https://github.com/moha-b/VR/blob/Challenge-1-Architecture-Review/Assets/Challenges/01_Architecture/Readme%20Images/TeleportationAnchor.png"/>
+
+- In the `Teleportation Anchor` Script under the **Teleportation Configuration** section look for 
+**Match Orientation** you will find that it has a default value `Target Up` click on it (drop-down menu)
+and select `Target Up And Forward`
+
+- Navigate to `Anchor` object inside the `Teleportation Anchor` object **NOT THE SCRIPT** the object in the  hierarchy, then rotate it around the **y-axis** to the desired direction
+
+<br />
+<br />
+<br />
+
+<img align="left" width="50" height="50" src="https://user-images.githubusercontent.com/73842931/226426630-55bbdb41-429f-46ad-aecd-40643fe2ac72.png"> 
+
+**IF YOU FACEC ANY ISSUE LET ME KNOW.[Create an Issue](https://github.com/moha-b/VR/issues)**    
