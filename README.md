@@ -1,4 +1,4 @@
-# Challenge 1 - Architecture Review                                                        <a href="https://unity.com/releases/2021-lts"> <img align="right" width="120" src="https://github.com/moha-b/VR/blob/Challenge-1-Architecture-Review/Assets/Challenges/01_Architecture/Readme%20Images/Unity.png" /> </a>   
+# <a href="https://learn.unity.com/tutorial/challenge-1-architecture-review">Challenge 1 - Architecture Review</a>                                                        <a href="https://unity.com/releases/2021-lts"> <img align="right" width="120" src="https://github.com/moha-b/VR/blob/Challenge-1-Architecture-Review/Assets/Challenges/01_Architecture/Readme%20Images/Unity.png" /> </a>   
 
 In this task, we'll use the skills we learnt while creating our VR Room in an Architectural review app. With this prototype, the user may view a structure at a real-world scale, check a small 3D model and floor plan of that building, and even use a ruler to take measures while they look about.
 - Open the broken architecture review prototype Scene:
@@ -97,4 +97,4 @@ and select `Target Up And Forward`
 
 <img align="left" width="50" height="50" src="https://user-images.githubusercontent.com/73842931/226426630-55bbdb41-429f-46ad-aecd-40643fe2ac72.png"> 
 
-**IF YOU FACEC ANY ISSUE LET ME KNOW. [Create an Issue](https://github.com/moha-b/VR/issues)**    
+**IF YOU FACE ANY ISSUES, LET ME KNOW. [Create an Issue](https://github.com/moha-b/VR/issues)**    
